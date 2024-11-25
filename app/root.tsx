@@ -4,6 +4,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  Link,
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
 
@@ -32,6 +33,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
+        <nav className="bg-gray-800 p-4">
+          <div className="container mx-auto flex gap-4">
+            <Link to="/" className="text-white hover:text-gray-300">
+              Home
+            </Link>
+            <Link to="/generic" className="text-white hover:text-gray-300">
+              Generic
+            </Link>
+          </div>
+        </nav>
         {children}
         <ScrollRestoration />
         <Scripts />
